@@ -172,9 +172,9 @@ img::-moz-selection {
 
 header.masthead {
   text-align: center;
-  color: green;
-  /*background-image: url("../img/header-bg.jpg");
-  background-repeat: no-repeat;*/
+  color: white;
+  background-image: url("../img/header-bg.jpg");
+  background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center;
   background-size: cover;

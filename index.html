@@ -496,7 +496,24 @@
                 <p>Now it is time to test the camera. As per the following screenshot, enter the commmand "raspistill -v -o test.jpg" into the console.</p>
                 <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/6-test-camera.png">
 
+                <br>
+                <h5><strong><u>Step 7.</u></strong></h5>
+                <p>Once you have issued the previous command. Type "ls" into the console. If you can see a file called "test.jpg" in your current directory. Then you have successfully set-up the camera</p>
 
+                <br>
+                <h5><strong><u>Step 8.</u></strong></h5>
+                <p>Now that your camera is able to take pictures. The next step is to give it the ability to snap a video clip anytime motion is detected. To do this, we will need to download and install "motion". This will allow to complete this.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/7-install-motion-for-live-feed.png">
+
+                <br>
+                <h5><strong><u>Step 9.</u></strong></h5>
+                <p>For the following steps, we will need to know a couple of details about our camera. As per the following screenshot, enter the command "v412-ctl -V" into the console. The information we are looking for is 'Width/Height'. In this example the Width and Height is 1024 and 768.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/8-Details-of-camera.png">
+
+                <br>
+                <h5><strong><u>Step 10.</u></strong></h5>
+                <p>It's now time to change the configuration file for 'motion'. Enter the following command "sudo nano /etc/motion/motion.conf" into the console.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/9-Motion-conf.png">
 
 
                 <ul class="list-inline">

@@ -515,6 +515,76 @@
                 <p>It's now time to change the configuration file for 'motion'. Enter the following command "sudo nano /etc/motion/motion.conf" into the console.</p>
                 <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/9-Motion-conf.png">
 
+                <br>
+                <h5><strong><u>Step 11.</u></strong></h5>
+                <p>The first thing we have to change in the 'motion.conf' file is the deamon value. In the screenshot below we can see the deamon has been set to off. Change this value to 'on' so it says 'deamon on'. This will allow us to run the motion capture software in the background.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/10-Change-deamon-to-on.png">
+
+                <br>
+                <h5><strong><u>Step 12.</u></strong></h5>
+                <p>In the following screenshot, we can see the value of "stream_localhost" has been to set to "on". We need to change this value to "off". By changing this value to "off", we can now access the livestream of our camera through the internet. If we didn't change this value, we would only be able to access our camere livestream on our local network i.e. home WiFi.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/11-Change-stream-restrictions-to-off.png">
+
+                <br>
+                <h5><strong><u>Step 13.</u></strong></h5>
+                <p>In this step, we are upping the maximum framerate of the camera livestream. By default the framerate is set to "1" which can be seen in the screenshot below, this would give us a very choppy video. Change the frame rate to "30".
+                Although, we changed the livestream framrate to 30, it depends on the wifi signal so this may actually be lower on the livestream. Additionally, our camera max framerate is 30, so that's why the config file was set to 30.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/11.2-Change-stream-maxium-framerate-to-30.png">
+
+                <br>
+                <h5><strong><u>Step 14.</u></strong></h5>
+                <p>This step is important as it sets the location of where our captured motion video clips will be saved. As per the following screenshot, we can see the files are being saved to a folder located at "/var/lib/motion". To make the files easier to find, we are going to change where the video clips are being saved. Change the value "/var/lib/motion" to "/home/pi/Monitor". This will store the video clips in a folder called "Monitor" located at home on the Raspberry Pi.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/12-Change-to-/home/pi/Monitor.png">
+
+                <br>
+                <h5><strong><u>Step 15.</u></strong></h5>
+                <p>The value of v4l2_palette is currently set to "17". Change this value to "15".</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/13-Change-to-15.png">
+
+                <br>
+                <h5><strong><u>Step 16.</u></strong></h5>
+                <p>In Step 9 we found out the width and height of our camera. In the screenshot below, we can see the current width of the camera is set to "320". Change this value to the width of your camera, in our example, the width is 1024. </p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/14-Change-width-1024.png">
+
+                <br>
+                <h5><strong><u>Step 17.</u></strong></h5>
+                <p>This step is similar to Step 16. Change the value of "240" to the height of the camera, in our case, 240. It's important to set the width and height of camera as it will give a bigger and clearer image.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/15-Change-height-to-768.png">
+
+                <br>
+                <h5><strong><u>Step 18.</u></strong></h5>
+                <p>This step is if you want to capture video seperate from the livestream. The default framerate is set to "2', change to this our cameras framerate which is 30.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/16-Change-to-100.png">
+
+                <br>
+                <h5><strong><u>Step 19.</u></strong></h5>
+                <p>We nearly have a working livestream of our camera. In step 11, we enabled the motion capture software to run in the background. Now we have to actually give it the permission to run. Enter "sudo nano /etc/default/motion" into the console, as shown in the screenshot below.
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/17-Open-/etc/default/motion.png">
+
+                <br>
+                <h5><strong><u>Step 20.</u></strong></h5>
+                <p>Change the value of "start_motion_deamon" to "yes"</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/18-Change-to-yes.png">
+
+                <br>
+                <h5><strong><u>Step 21.</u></strong></h5>
+                <p>In Step 14, we pointed at where to save the capture video files from the camera. Now we have to create that location. As shown in the screenshot below, enter the command "mkdir /home/pi/Monitor" into console.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/19-mkdir-/home/pi/Monitor.png">
+
+                <br>
+                <h5><strong><u>Step 22.</u></strong></h5>
+                <p>In this step, we are simply giving 'motion' owenership of our newly created folder "Monitor".</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/20-sudo-chgrp-motion.png">
+
+                <br>
+                <h5><strong><u>Step 23.</u></strong></h5>
+                <p>Now we are giving 'motion' the ability to read and write to the folder 'Monitor'</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/21-chmod-g+rwx-/home/pi/Monitor">
+
+                <br>
+                <h5><strong><u>Step 24.</u></strong></h5>
+                <p>Finally, we can start our livestream. Enter the following command "sudo service motions start" into the console, as shown in the screenshot below.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/">
 
                 <ul class="list-inline">
                   <li>Category: Movement Detection </li>

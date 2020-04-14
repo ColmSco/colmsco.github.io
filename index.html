@@ -534,7 +534,7 @@
                 <br>
                 <h5><strong><u>Step 14.</u></strong></h5>
                 <p>This step is important as it sets the location of where our captured motion video clips will be saved. As per the following screenshot, we can see the files are being saved to a folder located at "/var/lib/motion". To make the files easier to find, we are going to change where the video clips are being saved. Change the value "/var/lib/motion" to "/home/pi/Monitor". This will store the video clips in a folder called "Monitor" located at home on the Raspberry Pi.</p>
-                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/12-Change-to-/home/pi/Monitor.png">
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/12-Change-to-home-pi-Monitor.png">
 
                 <br>
                 <h5><strong><u>Step 15.</u></strong></h5>
@@ -559,7 +559,7 @@
                 <br>
                 <h5><strong><u>Step 19.</u></strong></h5>
                 <p>We nearly have a working livestream of our camera. In step 11, we enabled the motion capture software to run in the background. Now we have to actually give it the permission to run. Enter "sudo nano /etc/default/motion" into the console, as shown in the screenshot below.
-                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/17-Open-/etc/default/motion.png">
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/17-Open-etc-default-motion.png">
 
                 <br>
                 <h5><strong><u>Step 20.</u></strong></h5>
@@ -569,7 +569,7 @@
                 <br>
                 <h5><strong><u>Step 21.</u></strong></h5>
                 <p>In Step 14, we pointed at where to save the capture video files from the camera. Now we have to create that location. As shown in the screenshot below, enter the command "mkdir /home/pi/Monitor" into console.</p>
-                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/19-mkdir-/home/pi/Monitor.png">
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/19-mkdir-home-pi-Monitor.png">
 
                 <br>
                 <h5><strong><u>Step 22.</u></strong></h5>
@@ -579,12 +579,12 @@
                 <br>
                 <h5><strong><u>Step 23.</u></strong></h5>
                 <p>Now we are giving 'motion' the ability to read and write to the folder 'Monitor'</p>
-                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/21-chmod-g+rwx-/home/pi/Monitor">
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/21-chmod-g+rwx-home-pi-Monitor.png">
 
                 <br>
                 <h5><strong><u>Step 24.</u></strong></h5>
                 <p>Finally, we can start our livestream. Enter the following command "sudo service motions start" into the console, as shown in the screenshot below.</p>
-                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/">
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/22-sudo-service-motion-start.png">
 
                 <ul class="list-inline">
                   <li>Category: Movement Detection </li>

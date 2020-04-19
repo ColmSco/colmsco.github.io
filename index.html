@@ -68,8 +68,6 @@
     </div>
   </header>
 
-
-
   <!-- About -->
   <section class="page-section" id="services">
     <div class="container">
@@ -142,7 +140,7 @@
             <img class="img-fluid" src="img/tutorials/02-thumbnail.jpg" alt="">
           </a>
           <div class="tutorials-caption">
-            <h4>Heat</h4>
+            <h4>Climate</h4>
             <p class="text-muted">Smoke / Fire Detector</p>
           </div>
         </div>
@@ -345,12 +343,60 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Heat Detector</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <h2 class="text-uppercase">Climate</h2>
+                <p class="item-intro text-muted">Notice! To fully complete this module you will have neededd to complete the RPi and Control Panel module!</p>
                 <img class="img-fluid d-block mx-auto" src="img/tutorials/02-full.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+             
+                <h5><strong><u>Step 1.</u></strong></h5>
+                <p>Firstly, we will need to create a directory to work in. To do this use the following command "sudo mkdir temp" into the console.<p> 
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/temp/1-sudo-mkdir-temp.png">
+
+                <h5><strong><u>Step 2.</u></strong></h5>
+                <p>Enter the command "cd temp" to go to our newly created folder.<p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/temp/2-cd-temp.png">
+
+                <h5><strong><u>Step 3.</u></strong></h5>
+                <p>We will need to download the necessary files to use our climate reading chip. To download this, enter the following command "sudo wget -O bme280.py http://bit.ly/bme280py" into the console.<p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/temp/3-wget-github-stuff.png">
+
+                <h5><strong><u>Step 4.</u></strong></h5>
+                <p>Additionally, we need to download the necessary python libraries in order to read the output from the chip and properly use its functions. To do this, enter the following command "sudo apt-get install -y python-smbus" into the console. If prompted, enter "y" into the console to continue with the download.<p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/temp/4-sudo-apt-get-install-y-python-smbus.png">
+
+                <h5><strong><u>Step 5.</u></strong></h5>
+                <p>The following package we are going to download will allow to test if our climate reading chip has successfully been installed and is detectable by our Raspberry Pi. Enter the following command "sudo apt-get install -y i2c-tools" into the console. If prompted enter "y" into the console. Once this has completed downloading, reboot your device by entering "sudo reboot now" into the console.<p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/temp5-sudo-apt-get-install-y-i2c-tools">
+
+                <h5><strong><u>Step 6.</u></strong></h5>
+                <p>Once your Raspberry Pi has rebooted (Step 5). Enter the following command "sudo raspi-config" into the console This will open the config menu for the Raspberry Pi.<p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/temp/6-sudo-raspi-config.png">
+
+                <h5><strong><u>Step 7.</u></strong></h5>
+                <p>Using the arrow keys, navigate to "5. Interfacing Options" and press enter when it becomes highlighted. This can be seen in the screenshot below.<p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/temp/7-interfacing-options.png">
+
+                <h5><strong><u>Step 8.</u></strong></h5>
+                <p>Using the arrow keys, navigate to "P5 I2C" and press enter, as shown in the screenshot below.<p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/temp/8-enable-ic2.png">
+
+                <h5><strong><u>Step 9.</u></strong></h5>
+                <p>After having completed Step 8, you will be prompted with a message asking if you would like to enable the "ARM I2C Interface". Navigate to "Yes" and hit enter. After you have done this, exit out the config menu and reboot the Raspberry Pi, if not prompted to do so.<p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/temp/9-arm-i2c-enabled-yes.png">
+
+                <h5><strong><u>Step 10.</u></strong></h5>
+                <p>Now that we have downloaded and installed all the neccessarry files/tools, it's time to test if our climate reading chip is readable by the Raspberry Pi. To do this, enter the following command "i2cdetect -y 1" into the console. If the output resembles the screenshot below, then the climate reading chip has successfully been implemented. If nothing is being detected, you should double check <p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/temp/10-i2cdetect-y-1.png">
+
+                <h5><strong><u>Step 11.</u></strong></h5>
+                <p>Finally we can test the climate reading chip. To do this enter the following command "sudo python bme280.py" which can be seen in the screenshot below.<p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/temp/11-sudo-python-bme280.png">
+
+                <h5><strong><u>Step 12.</u></strong></h5>
+                <p>If the installation and setup of the climate reading chip has been successful, the output should be similar to the screenshot below.<p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/temp/12-output.png">
+
                 <ul class="list-inline">
-                  <li>Category: Fire Detector</li>
+                  <li>Category: Climate</li>
                 </ul>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
@@ -407,11 +453,6 @@
                 <h5><strong><u>Step 7.</u></strong></h5>
                 <p>This step is a replica of step 6. However, the python script is named "turnOFF.py", and the script is slightly different which can be seen in the following screenshot.<p>
                 <img class="img-fluid d-block mx-auto" src="img/tutorials/light/7-turnOFF-script.png">
-
-                <h5><strong><u>Step</u></strong></h5>
-                <p><p>
-                <img class="img-fluid d-block mx-auto" src="img/tutorials/light/">
-
 
                 <ul class="list-inline">
                   <li>Category: Home Lighting</li>
@@ -560,7 +601,7 @@
 
                 <br>
                 <h5><strong><u>Step 24.</u></strong></h5>
-                <p>Finally, we can start our livestream. Enter the following command "sudo service motions start" into the console, as shown in the screenshot below.</p>
+                <p>Finally, we can start our livestream. Enter the following command "sudo service motion start" into the console, as shown in the screenshot below.</p>
                 <img class="img-fluid d-block mx-auto" src="img/tutorials/camera/22-sudo-service-motion-start.png">
 
                 <ul class="list-inline">

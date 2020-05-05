@@ -665,11 +665,41 @@
               <div class="modal-body">
                 <!-- Project Details Go Here -->
                 <h2 class="text-uppercase">Control Panel</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <p class="item-intro text-muted"></p>
                 <img class="img-fluid d-block mx-auto" src="img/tutorials/06-full.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <p>The control panel will act as a seperate website hosted form the Raspberry Pi allowing us to interact with out IoT devices/</p>
+
+                <br>
+                <h5><strong><u>Step 1.</u></strong></h5>
+                <p>Firstly, we need to install Apache. Apache is the web server that will host our control panel and allow us to interact with our devices. To do this, enter "sudo apt install apache2" as shown below.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/xampp/1-sudo-apt-install-apache2.png">
+
+                <br>
+                <h5><strong><u>Step 2.</u></strong></h5>
+                <p>In this step, we are giving the user "pi" ownershop of the folder our webserver is contained in. This will allow to make changes to our folder when needed. Enter the command which can be seen below into the terminal</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/xampp/2-sudo-chown-r-pi.png">
+
+                <br>
+                <h5><strong><u>Step 3.</u></strong></h5>
+                <p>By entering in the following command into terminal, we are giving Apache who is the owner of /var/www/html the ability to read, write, and execute files within that folder.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/xampp/3-sudo-chmod-R-770.png">
+
+                <br>
+                <h5><strong><u>Step 4.</u></strong></h5>
+                <p>To start Apache, enter in the following command "sudo systemctl start apache2" to terminal. Once you have done this, open a website and navigate to "192.168.*.*/index.html". If you are met with a page that says "It works!" then you are successful.</p>
+
+                <br>
+                <h5><strong><u>Step 6</u></strong></h5>
+                <p>The next step is to navigate to where your web server is stored. Do this by entering the following command "cd /var/www/html" into terminal.</p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/xampp/cd-var-www-html.png">
+
+                <br>
+                <h5><strong><u>Step </u></strong></h5>
+                <p></p>
+                <img class="img-fluid d-block mx-auto" src="img/tutorials/xampp/.png">
+
                 <ul class="list-inline">
-                  <li>Category: Alert Management</li>
+                  <li>Category: Control Panel</li>
                 </ul>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
